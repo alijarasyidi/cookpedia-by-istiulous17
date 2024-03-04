@@ -1,6 +1,6 @@
 import * as PIXI from "pixi.js";
 import { SSceneManager } from "./scene/scene.manager";
-import { SSceneKeys } from "./scene/scene.keys";
+import { SceneKeys } from "./scene/scene.keys";
 import { SAssetLoader } from "./system/asset.loader";
 
 class Application {
@@ -26,7 +26,7 @@ class Application {
             await SAssetLoader.loadAll();
 
         SSceneManager.setupAll();
-        SSceneManager.load(SSceneKeys.main);
+        SSceneManager.load(SceneKeys.main);
     }
 }
 

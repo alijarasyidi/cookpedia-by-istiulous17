@@ -1,7 +1,5 @@
-class SceneKeys {
+export const SceneKeys = {
     // add scene keys here
-    main = "main";
-    cookBook = "cook-book";
+    main: "main",
+    cookBook: "cook-book"
 }
-
-export const SSceneKeys = new SceneKeys();

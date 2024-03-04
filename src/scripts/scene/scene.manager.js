@@ -1,6 +1,6 @@
 import { SMainScene } from "./scene.main";
 import { SCookBookScene } from "./scene.cookbook";
-import { SSceneKeys } from "./scene.keys";
+import { SceneKeys } from "./scene.keys";
 
 class SceneManager {
     constructor() {
@@ -19,9 +19,9 @@ class SceneManager {
 
         console.log(`scene.manager | load ${scene} scene`);
 
-        if (scene === SSceneKeys.main) {
+        if (scene === SceneKeys.main) {
             SMainScene.load();
-        } else if (scene === SSceneKeys.cookBook) {
+        } else if (scene === SceneKeys.cookBook) {
             SCookBookScene.load();
         }
         this.currentScene = scene;
@@ -30,9 +30,9 @@ class SceneManager {
     #unload(scene) {
         console.log(`scene.manager | unload ${scene} scene`);
 
-        if (scene === SSceneKeys.main) {
+        if (scene === SceneKeys.main) {
             SMainScene.unload();
-        } else if (scene === SSceneKeys.cookBook) {
+        } else if (scene === SceneKeys.cookBook) {
             SCookBookScene.unload();
         }
     }

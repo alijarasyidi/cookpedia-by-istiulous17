@@ -4,7 +4,7 @@ import { Scene } from "./scene";
 import { App } from "../app";
 import { TextFormat } from "../system/text.formatter";
 import { SSceneManager } from "./scene.manager";
-import { SSceneKeys } from "./scene.keys";
+import { SceneKeys } from "./scene.keys";
 
 class CookBookScene extends Scene {
     setup() {
@@ -21,7 +21,7 @@ class CookBookScene extends Scene {
         const button = new PIXIUI.Button(buttonView);
         button.view.position.set(App.widthView / 2 - buttonView.width / 2, App.heightView / 2);
         button.onPress.connect(() => {
-            SSceneManager.load(SSceneKeys.main);
+            SSceneManager.load(SceneKeys.main);
         });
         const buttonText = new PIXI.Text("Go to main scene", TextFormat.normal);
         buttonText.style.fontSize = 24;
