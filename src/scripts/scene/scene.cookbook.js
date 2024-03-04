@@ -2,6 +2,7 @@ import * as PIXI from "pixi.js";
 import * as PIXIUI from "@pixi/ui";
 import { Scene } from "./scene";
 import { App } from "../app";
+import { TextFormat } from "../system/text.formatter";
 import { SSceneManager } from "./scene.manager";
 import { SSceneKeys } from "./scene.keys";
 
@@ -9,15 +10,7 @@ class CookBookScene extends Scene {
     setup() {
         const container = new PIXI.Container();
 
-        const style = new PIXI.TextStyle({
-            fill: "#ffffff",
-            fontFamily: "Verdana",
-            fontSize: 50,
-            fontWeight: "bolder",
-            letterSpacing: 2,
-            strokeThickness: 4
-        });
-        const text = new PIXI.Text("this is second scene", style);
+        const text = new PIXI.Text("this is second scene", TextFormat.header);
         text.position.set(App.widthView / 2, App.heightView / 10);
         text.anchor.set(0.5, 0.5);
         container.addChild(text);
@@ -30,7 +23,7 @@ class CookBookScene extends Scene {
         button.onPress.connect(() => {
             SSceneManager.load(SSceneKeys.main);
         });
-        const buttonText = new PIXI.Text("Go to main scene");
+        const buttonText = new PIXI.Text("Go to main scene", TextFormat.normal);
         buttonText.style.fontSize = 24;
         buttonText.style.letterSpacing = 0;
         buttonText.position.set(buttonView.width / 2, buttonView.height / 2);
