@@ -1,5 +1,6 @@
 import { SMainScene } from "./scene.main";
 import { SCookBookScene } from "./scene.cookbook";
+import { STitleScene } from "./scene.title";
 import { SceneKeys } from "./scene.keys";
 
 class SceneManager {
@@ -10,6 +11,7 @@ class SceneManager {
     setupAll() {
         SMainScene.setup();
         SCookBookScene.setup();
+        STitleScene.setup();
     }
 
     load(scene) {
@@ -19,22 +21,39 @@ class SceneManager {
 
         console.log(`scene.manager | load ${scene} scene`);
 
-        if (scene === SceneKeys.main) {
-            SMainScene.load();
-        } else if (scene === SceneKeys.cookBook) {
-            SCookBookScene.load();
-        }
+        switch (scene) {
+            case SceneKeys.main:
+                SMainScene.load();
+                break;
+            case SceneKeys.cookBook:
+                SCookBookScene.load();
+                break;
+            case SceneKeys.title:
+                STitleScene.load();
+                break;
+            default:
+                throw new Error(`invalid scene: ${scene}`);
+        };
+
         this.currentScene = scene;
     }
 
     #unload(scene) {
         console.log(`scene.manager | unload ${scene} scene`);
 
-        if (scene === SceneKeys.main) {
-            SMainScene.unload();
-        } else if (scene === SceneKeys.cookBook) {
-            SCookBookScene.unload();
-        }
+        switch (scene) {
+            case SceneKeys.main:
+                SMainScene.unload();
+                break;
+            case SceneKeys.cookBook:
+                SCookBookScene.unload();
+                break;
+            case SceneKeys.title:
+                STitleScene.unload();
+                break;
+            default:
+                throw new Error(`invalid scene: ${scene}`);
+        };
     }
 }
 

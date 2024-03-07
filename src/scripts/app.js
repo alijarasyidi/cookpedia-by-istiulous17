@@ -1,4 +1,5 @@
 import * as PIXI from "pixi.js";
+import { SScreenSetting } from "./system/scree.setting";
 import { SSceneManager } from "./scene/scene.manager";
 import { SceneKeys } from "./scene/scene.keys";
 import { SAssetLoader } from "./system/asset.loader";
@@ -6,18 +7,15 @@ import { SAssetLoader } from "./system/asset.loader";
 class Application {
     constructor() {
         this.instance = {};
-        this.widthView = 0;
-        this.heightView = 0;
     }
 
     async run() {
         const app = new PIXI.Application({
-            background: 'F5DD61',
-            resizeTo: window
+            background: 'EADFB4',
+            height: SScreenSetting.appHeight,
+            width: SScreenSetting.appWidth
         });
 
-        this.widthView = app.view.width;
-        this.heightView = app.view.height;
         this.instance = app;
 
         document.body.appendChild(this.instance.view);
@@ -26,7 +24,7 @@ class Application {
             await SAssetLoader.loadAll();
 
         SSceneManager.setupAll();
-        SSceneManager.load(SceneKeys.main);
+        SSceneManager.load(SceneKeys.title);
     }
 }
 

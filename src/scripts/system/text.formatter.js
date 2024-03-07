@@ -11,5 +11,10 @@ export const TextFormat = {
     normal: new PIXI.TextStyle({
         fontFamily: "Georgia, serif",
         fontSize: 24
+    }),
+
+    temp: new PIXI.TextStyle({
+        fontFamily: "Verdana",
+        fontSize: 40
     })
 }
