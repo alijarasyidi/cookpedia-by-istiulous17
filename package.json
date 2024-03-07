@@ -17,6 +17,7 @@
     "webpack-merge": "^5.8.0"
   },
   "dependencies": {
+    "@pixi/ui": "^0.10.5",
     "pixi.js": "^7.4.0"
   }
 }
