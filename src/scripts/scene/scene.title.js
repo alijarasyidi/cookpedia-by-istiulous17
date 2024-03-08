@@ -3,7 +3,7 @@ import { Scene } from "./scene";
 import { App } from "../app";
 import { AssetKeys } from "../system/asset.keys";
 import { TextFormat } from "../system/text.formatter";
-import { SScreenSetting } from "../system/scree.setting";
+import { SScreenSetting } from "../system/screen.setting";
 
 class TitleScene extends Scene {
 
