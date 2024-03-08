@@ -4,11 +4,24 @@ import { App } from "../app";
 import { AssetKeys } from "../system/asset.keys";
 import { TextFormat } from "../system/text.formatter";
 import { SScreenSetting } from "../system/screen.setting";
+import { SceneKeys } from "./scene.keys";
+import { SSceneManager } from "./scene.manager";
 
 class TitleScene extends Scene {
 
     setup() {
         const container = this.createContainer();
+
+        const invisibleBg = PIXI.Sprite.from(PIXI.Texture.WHITE);
+        invisibleBg.anchor.set(0.5, 0.5);
+        invisibleBg.width = SScreenSetting.width;
+        invisibleBg.height = SScreenSetting.height;
+        invisibleBg.alpha = 0;
+        invisibleBg.eventMode = 'static';
+        invisibleBg.on('click', () => {
+            SSceneManager.load(SceneKeys.dining);
+        });
+        container.addChild(invisibleBg);
 
         const logo = PIXI.Sprite.from(AssetKeys.istiulousLogo);
         logo.anchor.set(0.5, 0.5);
