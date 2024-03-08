@@ -17,7 +17,7 @@ class SceneManager {
             this.#unload(this.currentScene);
         }
 
-        console.log(`scene.manager | load ${scene} scene`);
+        console.log(`scene.manager | load ${scene} scene.`);
 
         switch (scene) {
             case SceneKeys.title:
