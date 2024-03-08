@@ -1,6 +1,6 @@
 import * as PIXI from "pixi.js";
 import { App } from "../app";
-import { SScreenSetting } from "../system/scree.setting";
+import { SScreenSetting } from "../system/screen.setting";
 
 export class Scene {
     constructor() {

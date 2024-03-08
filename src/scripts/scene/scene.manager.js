@@ -1,7 +1,6 @@
-import { SMainScene } from "./scene.main";
-import { SCookBookScene } from "./scene.cookbook";
-import { STitleScene } from "./scene.title";
 import { SceneKeys } from "./scene.keys";
+import { STitleScene } from "./scene.title";
+import { SDiningScene } from "./scene.dining";
 
 class SceneManager {
     constructor() {
@@ -9,9 +8,8 @@ class SceneManager {
     }
 
     setupAll() {
-        SMainScene.setup();
-        SCookBookScene.setup();
         STitleScene.setup();
+        SDiningScene.setup();
     }
 
     load(scene) {
@@ -22,14 +20,11 @@ class SceneManager {
         console.log(`scene.manager | load ${scene} scene`);
 
         switch (scene) {
-            case SceneKeys.main:
-                SMainScene.load();
-                break;
-            case SceneKeys.cookBook:
-                SCookBookScene.load();
-                break;
             case SceneKeys.title:
                 STitleScene.load();
+                break;
+            case SceneKeys.dining:
+                SDiningScene.load();
                 break;
             default:
                 throw new Error(`invalid scene: ${scene}`);
@@ -42,14 +37,11 @@ class SceneManager {
         console.log(`scene.manager | unload ${scene} scene`);
 
         switch (scene) {
-            case SceneKeys.main:
-                SMainScene.unload();
-                break;
-            case SceneKeys.cookBook:
-                SCookBookScene.unload();
-                break;
             case SceneKeys.title:
                 STitleScene.unload();
+                break;
+            case SceneKeys.dining:
+                SDiningScene.unload();
                 break;
             default:
                 throw new Error(`invalid scene: ${scene}`);

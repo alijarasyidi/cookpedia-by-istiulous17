@@ -1,5 +1,5 @@
 import * as PIXI from "pixi.js";
-import { SScreenSetting } from "./system/scree.setting";
+import { SScreenSetting } from "./system/screen.setting";
 import { SSceneManager } from "./scene/scene.manager";
 import { SceneKeys } from "./scene/scene.keys";
 import { SAssetLoader } from "./system/asset.loader";
