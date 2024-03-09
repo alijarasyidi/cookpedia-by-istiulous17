@@ -18,7 +18,7 @@ class TitleScene extends Scene {
         invisibleBg.height = SScreenSetting.height;
         invisibleBg.alpha = 0;
         invisibleBg.eventMode = 'static';
-        invisibleBg.on('click', () => {
+        invisibleBg.on('pointerdown', () => {
             SSceneManager.load(SceneKeys.dining);
         });
         container.addChild(invisibleBg);

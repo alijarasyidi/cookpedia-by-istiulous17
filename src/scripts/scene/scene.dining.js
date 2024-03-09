@@ -16,7 +16,7 @@ class DiningScene extends Scene {
         invisibleBg.height = SScreenSetting.height;
         invisibleBg.alpha = 0;
         invisibleBg.eventMode = 'static';
-        invisibleBg.on('click', () => {
+        invisibleBg.on('pointerdown', () => {
             container.removeChild(invisibleBg);
             container.removeChild(popup);
         });
@@ -36,7 +36,7 @@ class DiningScene extends Scene {
         ramen.scale.set(0.8, 0.5);
         ramen.position.set(200, 400);
         ramen.eventMode = 'static';
-        ramen.on('click', () => {
+        ramen.on('pointerdown', () => {
             container.addChild(invisibleBg);
             container.addChild(popup);
         });
